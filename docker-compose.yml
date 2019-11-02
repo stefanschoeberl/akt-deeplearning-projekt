@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  jupyter:
+    image: jupyter/scipy-notebook
+    volumes:
+      - ./notebooks:/home/jovyan/work
+    ports:
+      - 127.0.0.1:8888:8888
+    entrypoint: 
+      - 'tini'
+      - '-g'
+      - 'start-notebook.sh'
+      - '--'
+      - '--NotebookApp.token=""'
+      - '--NotebookApp.password=""'
