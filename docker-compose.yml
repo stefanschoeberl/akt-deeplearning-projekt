@@ -7,6 +7,7 @@ services:
       - ./notebooks:/home/jovyan/work
     ports:
       - 127.0.0.1:8888:8888
+      - 127.0.0.1:6006:6006
     entrypoint: 
       - 'tini'
       - '-g'
